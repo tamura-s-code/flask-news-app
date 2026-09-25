@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>今日のニュースまとめ</title>
+</head>
+<body>
+    <h1>今日のニュースまとめ</h1>
+    
+    {% for item in weather %}
+        <li>
+            東京（東京）
+        </li>
+        <li>
+            天気：{{ item.weather }}  
+            最高気温：{{ item.high }}  
+            最低気温：{{ item.low }}
+        </li>
+    {% endfor %}
+
+    <ul>
+        {% for item in news %}
+            <li>
+                <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <button onclick="location.reload()">更新</button>
+
+    <h2>米ドル/円の現在のレート：{{rate}}</h2>
+
+</body>
+</html>
